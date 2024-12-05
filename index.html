@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <title>Motivational Msg App</title>
+        <style>
+            * {
+                font-size: 24px;
+                font-family: 'Arial', sans-serif;
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                background-color: lightblue;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                text-align: center;
+            }
+            .container {
+                background-color: Dodgerblue;
+                padding: 40px;
+                border-radius: 15px;
+                box-shadow: 0 4px 8px;
+                width: 100%;
+                max-width: 600px;
+            }
+            .heading {
+                border: solid 2px MediumSeaGreen;
+                border-radius: 25px;
+                background-color: violet;
+                color: white;
+                padding: 10px 0;
+                margin-bottom: 30px;
+            }
+            .submit {
+                padding: 15px 30px;
+                font-size: 20px;
+                border-radius: 20px;
+                background-color: lightgreen;
+                border: none;
+                cursor: pointer;
+                box-shadow: 0 4px 6px;
+                transition: background-color 0.3s ease, transform 0.2s ease;
+            }
+            .submit:hover {
+                background-color: limegreen;
+                transform: scale(1.05);
+            }
+            h2 {
+                font-size: 22px;
+                font-weight: bold;
+                color: White;
+                margin-top: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="heading">
+                <h1>Motivational Msg App</h1>
+            </div>
+            <form onsubmit="show()">
+                <input class="submit" type="submit" value="Show Message" />
+            </form>
+            <h2 id="msg"></h2>
+        </div>
+
+        <script>
+            function show() {
+                event.preventDefault();
+                let msg = document.getElementById("msg");
+                let messages = [
+                    "Nurture Your Mind With Great Thoughts, For You Will Never Go Any Higher Than You Think. - Robert H. Schuller",
+                    "What great thing would you attempt, if you knew you could not fail. - Mark Cuban",
+                    "It’s not about money or connections. It’s the willingness to outwork and outlearn everyone when it comes to your business. - Winston Churchill",
+                    "Don’t stop when you are tired. Stop when you’re done. – Wesley Snipes",
+                    "Shoot for the moon. Even if you miss, you’ll land among the stars. – Norman Vincent Peale",
+                    "The journey of a thousand miles begins with one step. – Lao Tzu"
+                ];
+                let r = parseInt(Math.random()*messages.length);
+                msg.innerHTML = messages[r];
+            }
+        </script>
+    </body>
+</html>
